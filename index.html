@@ -137,6 +137,17 @@ footer{background:#102c19;color:white;text-align:center;padding:32px 20px}
 .footer-logo{display:block;width:190px;max-width:80%;max-height:85px;object-fit:contain;margin:0 auto 12px}
 footer p{color:#c9d8cb;margin-top:8px;font-size:13px}
 .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25d366;color:white;display:grid;place-items:center;font-size:27px;box-shadow:0 5px 20px #0003}
+
+.sticky-cart{position:fixed;left:0;right:0;bottom:0;z-index:190;background:#fffdf7;border-top:2px solid var(--green);box-shadow:0 -5px 24px #0002;padding:12px max(16px,calc((100vw - 1100px)/2));display:flex;align-items:center;gap:16px;color:var(--dark)}
+.sticky-cart[hidden]{display:none}
+.sticky-cart-info{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.sticky-cart-info strong{font-size:14px;color:var(--dark-green)}
+.sticky-cart-info span{font-size:12px;color:#647064;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-cart-total{font-size:17px;font-weight:900;white-space:nowrap}
+.sticky-cart-button{border:0;border-radius:10px;background:var(--green);color:white;font-weight:900;padding:12px 16px;white-space:nowrap}
+.whatsapp-float{bottom:88px;text-decoration:none;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:600px){.sticky-cart{gap:8px;padding:10px 12px}.sticky-cart-total{font-size:14px}.sticky-cart-button{padding:11px 10px;font-size:12px}.sticky-cart-info span{max-width:36vw}.whatsapp-float{right:14px;bottom:82px}}
+
 .toast{position:fixed;top:95px;right:15px;max-width:calc(100% - 30px);background:var(--dark-green);color:white;padding:13px 18px;border-radius:11px;box-shadow:0 5px 20px #0002;z-index:500;display:none;font-weight:800}
 .cart-badge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:50px;background:var(--yellow);color:var(--dark);font-size:11px;margin-left:3px}
 
@@ -347,7 +358,8 @@ footer{background:#171412;color:#d9c8b4}
 <p>© <span id="ano"></span> Costela Real. Todos os direitos reservados.</p>
 </footer>
 
-<a class="whatsapp-float" href="#carrinho" aria-label="Abrir carrinho" title="Abrir carrinho" onclick="irParaCarrinho();return false;">🛒</a>
+<a class="whatsapp-float" href="https://wa.me/5515981689760" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Costela Real pelo WhatsApp" title="Falar com a Costela Real pelo WhatsApp">☏</a>
+<div class="sticky-cart" id="sticky-cart" aria-live="polite" hidden><div class="sticky-cart-info"><strong id="sticky-cart-count">0 itens</strong><span id="sticky-cart-preview">Seu pedido aparecerá aqui</span></div><div class="sticky-cart-total" id="sticky-cart-total">R$ 0,00</div><button type="button" class="sticky-cart-button" onclick="irParaCarrinho()">Ver pedido ↓</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -527,6 +539,14 @@ const total=itens.reduce((s,[,i])=>s+i.preco*i.quantidade,0);
 document.getElementById("cart-total").textContent=dinheiro(total);
 document.getElementById("nav-count").textContent=totalQuantidade;
 document.getElementById("menu-count").textContent=totalQuantidade;
+
+const sticky=document.getElementById("sticky-cart");
+if(sticky){
+  sticky.hidden = totalQuantidade === 0;
+  document.getElementById("sticky-cart-count").textContent = totalQuantidade + (totalQuantidade===1 ? " item no pedido" : " itens no pedido");
+  document.getElementById("sticky-cart-preview").textContent = itens.map(([,i])=>i.quantidade+"× "+i.nome).join(" · ");
+  document.getElementById("sticky-cart-total").textContent = dinheiro(total);
+}
 
 if(!itens.length){
 container.innerHTML='<div class="cart-empty">🔥 Seu carrinho está vazio. Escolha algo do nosso cardápio para começar!</div>';
