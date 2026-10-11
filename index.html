@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#171412">
 <title>Costela Real | Sabor artesanal na brasa</title>
-<meta name="description" content="Costela Real: hambúrgueres de costela, sanduíches de costela desfiada e pernil artesanal. Peça pelo WhatsApp.">
+<meta name="description" content="Costela Real: hot dogs e baguetes artesanais de pernil e costela. Confira o cardápio e peça pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -266,7 +266,7 @@ footer{background:#171412;color:#d9c8b4}
 <div class="hero-logo"><span class="hero-monogram">CR</span><span class="hero-brand">COSTELA <b>REAL</b></span></div>
 <span class="eyebrow">🔥 ARTESANAL • RÚSTICO • DE VERDADE</span>
 <h1>O sabor da brasa tem <span>nome e sobrenome.</span></h1>
-<p>Costela macia, carnes preparadas com cuidado e sanduíches feitos para quem leva sabor a sério. Escolha seu próximo favorito.</p>
+<p>Hot dogs e baguetes recheados com pernil assado e costela desfiada, preparados para quem leva sabor a sério. Escolha seu próximo favorito.</p>
 <div class="hero-actions">
 <a href="#cardapio" class="btn btn-fire">🔥 Ver nosso cardápio</a>
 <a href="#como-pedir" class="btn btn-outline-light">Como pedir</a>
@@ -281,7 +281,7 @@ footer{background:#171412;color:#d9c8b4}
 <div class="section-heading">
 <span class="mini">Feito com calma. Servido com personalidade.</span>
 <h2>Cardápio Costela Real</h2>
-<p>Hambúrgueres de costela, sanduíches de costela desfiada e pernil artesanal. O cardápio completo será publicado assim que os produtos e preços forem confirmados.</p>
+<p>Hot dogs e baguetes artesanais preparados com pernil assado, costela desfiada e muito sabor.</p>
 </div>
 
 <div class="menu-tools">
@@ -293,18 +293,15 @@ footer{background:#171412;color:#d9c8b4}
 
 <div class="category-list" id="categorias">
 <button class="category-btn active" data-cat="Todos">🍽️ Todos</button>
-<button class="category-btn" data-cat="Hambúrgueres de costela">🍔 Hambúrgueres</button>
-<button class="category-btn" data-cat="Sanduíches de costela">🥩 Costela desfiada</button>
-<button class="category-btn" data-cat="Sanduíches de pernil">🔥 Pernil</button>
-<button class="category-btn" data-cat="Acompanhamentos">🍟 Acompanhamentos</button>
-<button class="category-btn" data-cat="Bebidas">🥤 Bebidas</button>
+<button class="category-btn" data-cat="Hot dogs">🌭 Hot dogs</button>
+<button class="category-btn" data-cat="Baguetes">🥖 Baguetes</button>
 </div>
 
 <div id="result-count" class="result-count"></div>
 <div class="flavors" id="catalogo"></div>
 
 <div class="menu-expand" id="menu-expand" style="display:none">
-<button type="button" id="toggle-produtos" onclick="alternarProdutos()">Ver todos os sabores ↓</button>
+<button type="button" id="toggle-produtos" onclick="alternarProdutos()">Ver todos os produtos ↓</button>
 </div>
 
 <div class="menu-cta">
@@ -334,9 +331,9 @@ footer{background:#171412;color:#d9c8b4}
 </section>
 
 <section class="section" id="como-pedir">
-<div class="section-heading"><span class="mini">Simples e rápido</span><h2>Como fazer seu pedido?</h2><p>Seu próximo sanduíche favorito está a poucos passos.</p></div>
+<div class="section-heading"><span class="mini">Simples e rápido</span><h2>Como fazer seu pedido?</h2><p>Seu próximo hot dog ou baguete favorito está a poucos passos.</p></div>
 <div class="how-grid">
-<div class="how-card"><div class="how-icon">🥩</div><h3>1. Escolha seu sabor</h3><p>Explore os sanduíches artesanais e escolha o que combina com sua fome.</p></div>
+<div class="how-card"><div class="how-icon">🥩</div><h3>1. Escolha seu sabor</h3><p>Explore nossos hot dogs e baguetes artesanais e escolha o que combina com sua fome.</p></div>
 <div class="how-card"><div class="how-icon">🛒</div><h3>2. Confira o carrinho</h3><p>Adicione seus produtos, ajuste as quantidades e confira o total.</p></div>
 <div class="how-card"><div class="how-icon">📲</div><h3>3. Envie pelo WhatsApp</h3><p>Informe seus dados e envie o pedido para nossa equipe.</p></div>
 </div>
@@ -346,7 +343,7 @@ footer{background:#171412;color:#d9c8b4}
 <footer>
 <div class="footer-brand"><span class="brand-mark">CR</span><span class="brand-name">COSTELA <b>REAL</b></span></div>
 <p>Sabor artesanal, madeira, fogo e tradição.</p>
-<p>Pedidos pelo WhatsApp: número em configuração</p>
+<p>Pedidos pelo WhatsApp: (15) 98168-9760</p>
 <p>© <span id="ano"></span> Costela Real. Todos os direitos reservados.</p>
 </footer>
 
@@ -354,10 +351,14 @@ footer{background:#171412;color:#d9c8b4}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-const WHATSAPP = ""; // Informe o número oficial depois, no formato 55 + DDD + número, sem espaços.
+const WHATSAPP = "5515981689760"; // WhatsApp comercial da Costela Real.
 
 const produtos = [
-  // Produtos reais e preços serão inseridos após o envio do cardápio da Costela Real.
+  {id:"hot-dog-tradicional", numero:1, nome:"Hot Dog Tradicional", categoria:"Hot dogs", preco:14.90, emoji:"🌭", ingredientes:"Pão macio, salsicha, molho especial, maionese, vinagrete e batata palha.", foto:"https://images.unsplash.com/photo-1612392062798-2dbaa1b7e5e9?auto=format&fit=crop&w=900&q=80"},
+  {id:"hot-dog-pernil", numero:2, nome:"Hot Dog de Pernil", categoria:"Hot dogs", preco:24.90, emoji:"🌭", ingredientes:"Pão macio, salsicha, pernil assado desfiado, queijo derretido e molho especial da casa.", foto:"https://images.unsplash.com/photo-1612392062798-2dbaa1b7e5e9?auto=format&fit=crop&w=900&q=80"},
+  {id:"hot-dog-costela", numero:3, nome:"Hot Dog de Costela", categoria:"Hot dogs", preco:27.90, emoji:"🌭", ingredientes:"Pão macio, salsicha, costela desfiada, queijo derretido e molho especial da casa.", foto:"https://images.unsplash.com/photo-1612392062798-2dbaa1b7e5e9?auto=format&fit=crop&w=900&q=80"},
+  {id:"baguete-pernil", numero:4, nome:"Baguete de Pernil", categoria:"Baguetes", preco:29.90, emoji:"🥖", ingredientes:"Baguete crocante, pernil assado desfiado, queijo derretido e vinagrete especial.", foto:"https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80"},
+  {id:"baguete-costela", numero:5, nome:"Baguete de Costela", categoria:"Baguetes", preco:34.90, emoji:"🥖", ingredientes:"Baguete crocante, costela desfiada, queijo derretido e molho especial da casa.", foto:"https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80"}
 ];
 
 const carrinho = {};
@@ -395,7 +396,7 @@ mostrarTodosProdutos=!mostrarTodosProdutos;
 montarCatalogo();
 
 const botao=document.getElementById("toggle-produtos");
-botao.textContent=mostrarTodosProdutos?"Mostrar menos ↑":"Ver todos os sabores ↓";
+botao.textContent=mostrarTodosProdutos?"Mostrar menos ↑":"Ver todos os produtos ↓";
 
 if(!mostrarTodosProdutos){
 document.getElementById("cardapio").scrollIntoView({
@@ -420,14 +421,7 @@ if(ordem==="menor")lista.sort((a,b)=>(a.inteira??a.preco)-(b.inteira??b.preco));
 if(ordem==="maior")lista.sort((a,b)=>(b.inteira??b.preco)-(a.inteira??a.preco));
 if(ordem==="nome")lista.sort((a,b)=>a.nome.localeCompare(b.nome,"pt-BR"));
 
-if(ordem==="numero"){
-lista.sort((a,b)=>{
-const catA=["Bebidas","Acompanhamentos"].includes(a.categoria)?1:0;
-const catB=["Bebidas","Acompanhamentos"].includes(b.categoria)?1:0;
-if(catA!==catB)return catA-catB;
-return a.numero-b.numero;
-});
-}
+if(ordem==="numero"){ lista.sort((a,b)=>a.numero-b.numero); }
 
 document.getElementById("result-count").textContent=lista.length+" produto(s) encontrado(s)";
 
@@ -438,7 +432,7 @@ const botao=document.getElementById("toggle-produtos");
 areaExpandir.style.display=lista.length>9?"flex":"none";
 
 if(!lista.length){
-container.innerHTML=produtos.length===0?'<div class="no-results">🔥 Nosso cardápio está sendo preparado. Em breve você poderá escolher seus favoritos por aqui.</div>':'<div class="no-results">Não encontramos esse item. Tente outro nome ou ingrediente.</div>';
+container.innerHTML=produtos.length===0?'<div class="no-results">Não encontramos produtos com esse termo. Tente outro nome ou ingrediente.</div>':'<div class="no-results">Não encontramos esse item. Tente outro nome ou ingrediente.</div>';
 return;
 }
 
@@ -480,7 +474,7 @@ cards.forEach((card,index)=>{
 card.classList.toggle("hidden-product",!mostrarTodosProdutos&&index>=9);
 });
 
-botao.textContent=mostrarTodosProdutos?"Mostrar menos ↑":"Ver todos os sabores ↓";
+botao.textContent=mostrarTodosProdutos?"Mostrar menos ↑":"Ver todos os produtos ↓";
 }
 
 /* PREÇO E ADIÇÃO AO CARRINHO */
@@ -656,7 +650,7 @@ const detalhe=[i.tamanho,i.opcao].filter(Boolean).join(" / ");
 return `${i.quantidade}x ${i.nome}${detalhe?" ("+detalhe+")":""} — ${dinheiro(subtotal)}`;
 });
 
-if(!WHATSAPP){alert("O WhatsApp da Costela Real ainda não foi configurado. Informe o número oficial para ativar a finalização dos pedidos.");return;}
+if(!WHATSAPP){alert("Não foi possível configurar o WhatsApp. Confira o número comercial da Costela Real.");return;}
 
 let mensagem="🔥 *NOVO PEDIDO - COSTELA REAL*\n\n";
 mensagem+="*Cliente:* "+nome+"\n";
