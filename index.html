@@ -256,6 +256,35 @@ footer{background:#171412;color:#d9c8b4}
 @media(max-width:850px){.hero-logo{justify-content:center}.hero-logo img{width:min(100%,370px);height:220px;object-position:center}.brand-logo{width:160px;height:62px}}
 @media(max-width:560px){.brand-logo{width:125px;height:48px}.hero-logo img{width:min(100%,300px);height:185px}.footer-logo{height:115px}}
 
+
+/* BANNER PRINCIPAL COM FUNDOS PERSONALIZADOS */
+.hero-slideshow{
+  background-image:
+    linear-gradient(125deg, rgba(20,14,10,.72), rgba(57,25,13,.48) 55%, rgba(120,39,13,.42)),
+    url("fundodesktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Desativa os slides antigos para manter o banner estático */
+.hero-slideshow .hero-slide{
+  display: none;
+  animation: none;
+}
+
+/* Fundo específico para celulares */
+@media (max-width: 560px){
+  .hero-slideshow{
+    background-image:
+      linear-gradient(180deg, rgba(20,14,10,.60), rgba(57,25,13,.40)),
+      url("fundomobile.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 </style>
 </head>
 
