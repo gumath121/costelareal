@@ -257,11 +257,12 @@ footer{background:#171412;color:#d9c8b4}
 @media(max-width:560px){.brand-logo{width:125px;height:48px}.hero-logo img{width:min(100%,300px);height:185px}.footer-logo{height:115px}}
 
 
-/* BANNER PRINCIPAL COM FUNDOS PERSONALIZADOS */
+/* BANNER PRINCIPAL: imagem de fundo com contraste para o texto */
+.hero{position:relative;isolation:isolate;background:#21140f;}
 .hero-slideshow{
   background-image:
-    linear-gradient(125deg, rgba(20,14,10,.72), rgba(57,25,13,.48) 55%, rgba(120,39,13,.42)),
-    url("bannerdeskop.png");
+    linear-gradient(90deg, rgba(15,10,7,.78) 0%, rgba(15,10,7,.58) 52%, rgba(15,10,7,.25) 100%),
+    url("fundodesktop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -277,17 +278,20 @@ footer{background:#171412;color:#d9c8b4}
 @media (max-width: 560px){
   .hero-slideshow{
     background-image:
-      linear-gradient(180deg, rgba(20,14,10,.60), rgba(57,25,13,.40)),
-      url("bannermobile.png");
+      linear-gradient(180deg, rgba(15,10,7,.68) 0%, rgba(15,10,7,.48) 60%, rgba(15,10,7,.30) 100%),
+      url("fundomobile.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
+  .hero-inner{min-height:430px;padding-top:30px;padding-bottom:34px}
+  .hero-content{max-width:100%;}
+  .hero h1,.hero p{text-shadow:0 2px 10px rgba(0,0,0,.65)}
 }
 
 /* Hero em destaque: remove a ilustração lateral e valoriza o banner */
 .hero-inner{grid-template-columns:minmax(0,1fr);max-width:1100px;text-align:center}
-.hero-content{width:100%;max-width:900px;margin:0 auto}
+.hero-content{width:100%;max-width:900px;margin:0 auto;text-shadow:0 2px 10px rgba(0,0,0,.55)}
 .hero-logo{justify-content:center}
 .hero-logo img{object-position:center}
 .hero p{margin-left:auto;margin-right:auto}
@@ -431,7 +435,8 @@ const produtos = [
   {id:"fanta-lata", numero:12, nome:"Fanta Laranja Lata 350 ml", categoria:"Bebidas", preco:7.00, emoji:"🥤", ingredientes:"Refrigerante Fanta sabor laranja, lata de 350 ml.", foto:"https://images.tcdn.com.br/img/img_prod/655199/refrigerante_fanta_laranja_lata_350_ml_com_12_unidades_14396_3_86a43c44da03ff64997b1a9a9e518654.jpg"},
   {id:"sprite-lata", numero:13, nome:"Sprite Lata 350 ml", categoria:"Bebidas", preco:7.00, emoji:"🥤", ingredientes:"Refrigerante Sprite sabor limão, lata de 350 ml.", foto:"https://anossadrogaria.vteximg.com.br/arquivos/ids/511344-1000-1000/969717_00.jpg?v=637045778865830000"},
   {id:"guarana-antarctica-2l", numero:14, nome:"Guaraná Antarctica 2 litros", categoria:"Bebidas", preco:12.00, emoji:"🥤", ingredientes:"Refrigerante Guaraná Antarctica, garrafa PET de 2 litros.", foto:"https://d3gdr9n5lqb5z7.cloudfront.net/fotos/1614712485849.jpg"},
-  {id:"batata-frita-200g", numero:15, nome:"Batata Frita (porção 200 g)", categoria:"Porções", preco:13.00, emoji:"🍟", ingredientes:"Porção de 200 g de batatas fritas, crocantes e douradas.", foto:"batata-frita.png"}
+  {id:"batata-frita-200g", numero:15, nome:"Batata Frita (porção 200 g)", categoria:"Porções", preco:13.00, emoji:"🍟", ingredientes:"Porção de 200 g de batatas fritas, crocantes e douradas.", foto:"batata-frita.png"},
+  {id:"batata-frita-costela-queijo", numero:16, nome:"Batata Frita com Costela Desfiada e Queijo", categoria:"Porções", preco:37.00, emoji:"🍟", ingredientes:"Batata frita crocante coberta com costela desfiada e queijo derretido."}
 ];
 
 const carrinho = {};
